@@ -1,5 +1,11 @@
+import DisjointForceDirectedGraph from "./DisjointForceDirectedGraph";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <DisjointForceDirectedGraph />
+    </>
+  );
 }
 
 export default App;
