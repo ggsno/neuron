@@ -1,11 +1,9 @@
-import TextNode from "./components/TextNode";
+import TempNode from "./components/TempNode";
 
 function App() {
   return (
     <>
-      <svg className="w-screen h-screen">
-        <TextNode content="test node" isSelected />
-      </svg>
+      <TempNode />
     </>
   );
 }
