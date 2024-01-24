@@ -18,6 +18,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    posX: "50%",
+    posY: "50%",
     isSelected: false,
     content: "test node",
   },
@@ -25,6 +27,8 @@ export const Default: Story = {
 
 export const Selected: Story = {
   args: {
+    posX: "50%",
+    posY: "50%",
     isSelected: true,
     content: "test node",
   },

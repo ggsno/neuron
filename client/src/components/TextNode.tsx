@@ -1,40 +1,38 @@
-import getStringWidthCount from "../utils/getStringWidthCount";
-
 export type TextNodeProps = {
+  /**
+   * svg상에 들어갈 Node의 중앙 좌표 값 x
+   */
+  posX: number | string;
+  /**
+   * svg상에 들어갈 Node의 중앙 좌표 값 y
+   */
+  posY: number | string;
   content?: string;
   isSelected?: boolean;
 };
 
-const CONTENT_MIN_WIDTH_THRESHOLD = 5;
-const CONTENT_WIDTH_MULTIPLIER = 6;
-
 export default function TextNode({
+  posX,
+  posY,
   content = "new node",
   isSelected = false,
 }: TextNodeProps) {
-  const contentWidth = getStringWidthCount(content);
-
   return (
     <>
-      <ellipse
-        rx={
-          contentWidth < CONTENT_MIN_WIDTH_THRESHOLD
-            ? CONTENT_MIN_WIDTH_THRESHOLD * CONTENT_WIDTH_MULTIPLIER
-            : contentWidth * CONTENT_WIDTH_MULTIPLIER
-        }
-        ry={20}
-        cx="50%"
-        cy="50%"
-        className={`${isSelected ? "fill-point" : "fill-gray-200"}`}
+      <circle
+        r={20}
+        cx={posX}
+        cy={posY}
+        className={`${isSelected ? "fill-[#D3E1FD]" : "fill-gray-200"}`}
       />
       <text
-        x="50%"
-        y="50%"
+        x={posX}
+        y={posY}
         dominant-baseline="middle"
         text-anchor="middle"
         font-size="16"
         className={`font-mono ${
-          isSelected ? "fill-snow-white" : "fill-gray-800"
+          isSelected ? "fill-black font-bold" : "fill-gray-800"
         }`}
       >
         {content}
