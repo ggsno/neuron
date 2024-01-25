@@ -1,10 +1,10 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
 import { queryClient, queryKeyDict } from "../global/reactQuery";
 import axios from "axios";
 import { TextNode } from "./TextNode.type";
 
 export default function useTextNode() {
-  const { data: textNodes, ...rest } = useQuery({
+  const { data: textNodes, ...rest } = useSuspenseQuery({
     queryKey: [queryKeyDict.textNodes],
     queryFn: async () => {
       const res = await axios.get<TextNode[]>(
