@@ -28,9 +28,9 @@ export default function TextNode({
       <text
         x={posX}
         y={posY}
-        dominant-baseline="middle"
-        text-anchor="middle"
-        font-size="16"
+        dominantBaseline="middle"
+        textAnchor="middle"
+        fontSize="16"
         className={`font-mono ${
           isSelected ? "fill-black font-bold" : "fill-gray-800"
         }`}
