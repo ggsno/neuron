@@ -1,9 +1,9 @@
-import Canvas from "./components/Canvas";
+import TextNodeList from "./components/TextNodeList";
 
 function App() {
   return (
     <>
-      <Canvas />
+      <TextNodeList />
     </>
   );
 }

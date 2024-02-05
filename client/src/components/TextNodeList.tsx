@@ -1,20 +1,21 @@
 import { Fragment } from "react";
-import useTextNode from "./useTextNode";
+import { useTextNode } from "./TextNode.hooks";
 import TextNode from "./TextNode";
-import ApiBoundary from "./common/ApiBoundary";
+import AsyncBoundary from "./common/AsyncBoundary";
 
-export default function Canvas() {
+export default function TextNodeList() {
   return (
     <>
-      <ApiBoundary>
-        <APIComponent />
-      </ApiBoundary>
+      <AsyncBoundary>
+        <AsyncComponent />
+      </AsyncBoundary>
     </>
   );
 }
 
-function APIComponent() {
+function AsyncComponent() {
   const { textNodes, createTextNode } = useTextNode();
+
   return (
     <>
       <button onClick={() => createTextNode("new")}>create</button>

@@ -3,7 +3,7 @@ import { queryClient, queryKeyDict } from "../global/reactQuery";
 import axios from "axios";
 import { TextNode } from "./TextNode.type";
 
-export default function useTextNode() {
+export function useTextNode() {
   const { data: textNodes, ...rest } = useSuspenseQuery({
     queryKey: [queryKeyDict.textNodes],
     queryFn: async () => {
